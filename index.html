@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Justen's Game</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" href= "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+
+</head>
+<body>
+	
+	<div id="container">
+		<div class="row" id="header">
+			<h1>Justen's Game</h1>
+				<table id="tracker">
+					<tbody>
+						<tr>
+							<td class="money" id="totalCredits">000000</td>
+							<td id="spaced">Credits</td>
+							<td class="money" id="activeBet">000</td>
+							<td>Bet</td>
+						</tr>
+					</tbody>
+				</table>
+		</div>
+		<div class="row">
+			<table id="slotGame">
+				<tbody>
+					<tr>
+						<td class="row1 pay2 pay4"></td>
+						<td class="row2 pay2"></td>
+						<td class="row3 pay2 pay5">&nbsp;</td>
+						<td class="row4 pay2">&nbsp;</td>
+						<td class="row5 pay2 pay4">&nbsp;</td>
+					</tr>
+					<tr>
+						<td class="row1 pay1">&nbsp;</td>
+						<td class="row2 pay1 pay4 pay5">&nbsp;</td>
+						<td class="row3 pay1">&nbsp;</td>
+						<td class="row4 pay1 pay4 pay5">&nbsp;</td>
+						<td class="row5 pay1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td class="row1 pay3 pay5">&nbsp;</td>
+						<td class="row2 pay3">&nbsp;</td>
+						<td class="row3 pay3 pay4">&nbsp;</td>
+						<td class="row4 pay3">&nbsp;</td>
+						<td class="row5 pay3 pay5">&nbsp;</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="row" id="betButtons">
+			<input type="radio" name="Button" class="ButtonState" checked id="Button1" value="1"/>
+				<label class="Button" for="Button1">Bet1</label>
+			<input type="radio" name="Button" class="ButtonState" id="Button3" value="3"/>
+				<label class="Button" for="Button3">Bet 3</label>
+			<input type="radio" name="Button" class="ButtonState" id="Button5" value="5"/>
+				<label class="Button" for="Button5">Bet 5</label>
+			<input type="radio" name="Button" class="ButtonState" checked id="Button20" value="20"/>
+				<label class="Button" for="Button20">Bet 20</label>
+			<input type="radio" name="Button" class="ButtonState" id="Button60" value="60"/>
+				<label class="Button" for="Button60">Bet 60</label>
+			<input type="radio" name="Button" class="ButtonState" id="Button100" value="100"/>
+			<label class="Button" for="Button100">Bet 100</label>
+		</div>
+	</div>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+<script src="js/app.js" type="text/javascript"></script>
+</body>
+</html>

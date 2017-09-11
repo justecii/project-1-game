@@ -1,0 +1,70 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	width: 1000px;
+	text-align: center;
+}
+#slotGame td {
+	
+	width: 100px;
+	height: 100px;
+}
+#spaced{
+	
+	padding-right:100px;
+}
+.money {
+	font-family: 'Roboto Mono', monospace;
+	background-color: black;
+	color: white;
+	border-radius: 20px;
+	margin-left: 100px;	
+}
+
+.row1 {
+	border-right: 5px solid black;
+}
+.row2 {
+	border-right: 5px solid black;
+}
+.row3 {
+	border-right: 5px solid black;
+}
+.row4 {
+	border-right: 5px solid black;
+}
+/*.pay1 {
+	background-color: purple;
+}
+.pay2 {
+	background-color: red;
+}
+.pay3 {
+	background-color: green;
+}*/
+.pay4 {
+	background-color: teal;
+}
+.pay5 {
+	background-color: maroon;
+}
+
+#tracker {
+	max-height: 30px;
+	padding: 0;
+	margin: 0 auto;
+	font-size: 2em;
+}
+#slotGame {
+	margin-left: 100px;
+	border: 10px dashed blue;
+}
+
+#betButtons {
+	display: inline-block;
+	margin: 0 auto;
+	border: 10px solid black;
+}
+.ButtonState{display:none}
+.Button{padding:3px; margin:4px; background:#CCC; border:1px solid #333; cursor:pointer;}
+.ButtonState:checked + .Button{background:#fff;}
