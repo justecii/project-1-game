@@ -17,7 +17,7 @@ html, body {
 	font-family: 'Roboto Mono', monospace;
 	background-color: black;
 	color: white;
-	border-radius: 20px;
+	border-radius: 10px;
 	margin-left: 100px;	
 }
 
@@ -41,12 +41,17 @@ html, body {
 }
 .pay3 {
 	background-color: green;
-}*/
+}
 .pay4 {
 	background-color: teal;
 }
 .pay5 {
 	background-color: maroon;
+}*/
+.bold {
+	font-weight: bold;
+	color: yellow;
+	font-size: 1.3em;
 }
 
 #tracker {
@@ -56,15 +61,37 @@ html, body {
 	font-size: 2em;
 }
 #slotGame {
-	margin-left: 100px;
-	border: 10px dashed blue;
+	margin: 1% auto;
+	
 }
 
 #betButtons {
 	display: inline-block;
-	margin: 0 auto;
-	border: 10px solid black;
+	margin: 1% auto;
+	font-size: 1em;
 }
-.ButtonState{display:none}
-.Button{padding:3px; margin:4px; background:#CCC; border:1px solid #333; cursor:pointer;}
-.ButtonState:checked + .Button{background:#fff;}
+#betButtons label {
+	width: 100px;
+}
+.buttonState {
+	display:none;
+}
+.button {
+	padding:3px; 
+	margin:4px; 
+	background:#CCC; 
+	border:1px solid #333; 
+	cursor: crosshair;
+}
+@keyframes blink { 
+   50% { border-color: #ff0000; } 
+}
+.buttonState:checked + .button{ 
+	background:#fff;
+	border-width: 5px;
+	animation-name: blink ;
+    animation-duration: 0.5s ;
+    animation-timing-function: step-end ;
+    animation-iteration-count: infinite ;
+    animation-direction: alternate ;
+}
