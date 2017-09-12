@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Justen's Game</title>
+	<link rel="stylesheet" type="text/css" href="css/starwars.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" href= "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
@@ -11,7 +12,7 @@
 	
 	<div id="container">
 		<div class="row" id="header">
-			<h1>Justen's Game</h1>
+			<h1>Star Wars: The Empire Slots Back</h1>
 				<table id="tracker">
 					<tbody>
 						<tr>
@@ -24,32 +25,35 @@
 				</table>
 		</div>
 		<div class="row">
-			<table id="slotGame">
+			<table class="col-xs-9" id="slotGame">
 				<tbody>
 					<tr>
 						<td class="row1 pay2 pay4"></td>
 						<td class="row2 pay2"></td>
-						<td class="row3 pay2 pay5">&nbsp;</td>
-						<td class="row4 pay2">&nbsp;</td>
-						<td class="row5 pay2 pay4">&nbsp;</td>
+						<td class="row3 pay2 pay5"></td>
+						<td class="row4 pay2"></td>
+						<td class="row5 pay2 pay4"></td>
 					</tr>
 					<tr>
-						<td class="row1 pay1">&nbsp;</td>
-						<td class="row2 pay1 pay4 pay5">&nbsp;</td>
-						<td class="row3 pay1">&nbsp;</td>
-						<td class="row4 pay1 pay4 pay5">&nbsp;</td>
-						<td class="row5 pay1">&nbsp;</td>
+						<td class="row1 pay1"></td>
+						<td class="row2 pay1 pay4 pay5"></td>
+						<td class="row3 pay1"></td>
+						<td class="row4 pay1 pay4 pay5"></td>
+						<td class="row5 pay1"></td>
 					</tr>
 					<tr>
-						<td class="row1 pay3 pay5">&nbsp;</td>
-						<td class="row2 pay3">&nbsp;</td>
-						<td class="row3 pay3 pay4">&nbsp;</td>
-						<td class="row4 pay3">&nbsp;</td>
-						<td class="row5 pay3 pay5">&nbsp;</td>
+						<td class="row1 pay3 pay5"></td>
+						<td class="row2 pay3"></td>
+						<td class="row3 pay3 pay4"></td>
+						<td class="row4 pay3"></td>
+						<td class="row5 pay3 pay5"></td>
 					</tr>
 				</tbody>
 			</table>
+			<!-- Lighsaber Pull-Lever -->
+			<div class="col-xs-3" id="handle"><img src="images/lightsaber.png"></div>
 		</div>
+		<!--Buttons to select different bets -->
 		<div class="row" id="betButtons">
 			<input type="radio" name="button" class="buttonState" checked id="button1" value="1"/>
 				<label class="button" for="button1"><span class="bold">Bet 1</span><br>1 Line<br>1 Credit</label>
