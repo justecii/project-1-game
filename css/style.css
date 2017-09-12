@@ -10,17 +10,18 @@ body {
 	background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 800px;
+    /*height: 800px;*/
+    width:100%;
 }
 #header h1 {
 	font-family: Star Jedi;
 	font-size: 2.4em;
-	color: yellow;
+	color: black;
     text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;  
+    -1px -1px 0 yellow,
+    1px -1px 0 yellow,
+    -1px 1px 0 yellow,
+    1px 1px 0 yellow;  
 }
 table {
 
@@ -75,6 +76,12 @@ table {
 	font-weight: bold;
 	color: yellow;
 	font-size: 1.3em;
+	font-family: Star Jedi;
+	text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;  
 }
 #handle {
 	margin-top: 90px;
@@ -90,6 +97,12 @@ table {
 	padding: 0;
 	margin: 0 auto;
 	font-size: 2em;
+}
+#tracker .display {
+	color: red;
+	padding-left: 10px;
+	font-family: Star Jedi;
+	font-size: 0.8em;
 }
 #slotGame {
 	margin: 1% auto;
@@ -126,3 +139,14 @@ table {
     animation-iteration-count: infinite ;
     animation-direction: alternate ;
 }
+
+/*trying to  get the lightsaber to rotate on click*/
+.clicked {
+	transition: transform 0.5s ease;
+	transform: rotate(30deg);
+}
+.unclicked {
+	transition: transform 0.5s ease;
+	transform: rotate(50deg);
+}
+

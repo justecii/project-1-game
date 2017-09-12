@@ -102,6 +102,15 @@ function betWithZeros(number, length) {
 betSize.textContent = betWithZeros(startingBet, 3);
 
 // move the handle on click
+
 $('#handle').on('click', function(){
-	lever.style.transform = "rotate(45deg)";
-})
+	// lever.style.transform = "rotate(45deg)";
+	$(this).addClass('clicked');
+	console.log($(this));
+	setTimeout(function(){
+		$('#handle').removeClass('clicked');
+		
+	}, 600);
+
+});
+
