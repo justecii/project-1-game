@@ -1,14 +1,11 @@
-var startingCredits = 0;
+var startingCredits = 100;
 var startingBet = 0;
 var totalCredits = document.getElementById("totalCredits");
 var betSize = document.getElementById("activeBet");
 var lever =document.getElementById("handle");
-// var betOne = document.getElementById('button1');
-// var betThree = document.getElementById('button3');
-// var betFive = document.getElementById('button5');
-// var betTwenty = document.getElementById('button20');
-// var betSixty = document.getElementById('button60');
-// var betHundo = document.getElementById('button100');
+var middleRow = document.querySelectorAll('.horz2');
+var topRow = document.querySelectorAll('.horz1');
+var bottomRow = document.querySelectorAll('.horz3');
 var slotImages = [
 	{
 		name: "kylo",
@@ -51,12 +48,86 @@ var slotImages = [
 		name: "vader",
 		source:"images/vader.gif"
 	}
-
 ];
-var link = document.createElement("img");
-  link.src = slotImages[Math.floor(Math.random()*10)].source;
-$('.row1').append(link);
-console.log(link.src);
+ 
+
+function spin0() {
+	var randomFirst =Math.floor(Math.random()*10);
+	var aboveFirst = randomFirst - 1;
+	var belowFirst = randomFirst +1;
+	var link = document.createElement("img");
+	middleRow[0].appendChild(document.createElement("img")).src = slotImages[randomFirst].source;
+	if (randomFirst > 0) {
+		topRow[0].appendChild(document.createElement("img")).src = slotImages[randomFirst - 1].source;
+	} else {
+		topRow[0].appendChild(document.createElement("img")).src = slotImages[9].source;
+	};
+	if (randomFirst < 9) {
+		bottomRow[0].appendChild(document.createElement("img")).src =slotImages[randomFirst +1].source;
+	} else {
+		bottomRow[0].appendChild(document.createElement("img")).src =slotImages[0].source;
+	};
+};
+function spin1() {
+	var randomFirst =Math.floor(Math.random()*10);
+	var link = document.createElement("img");
+	middleRow[1].appendChild(document.createElement("img")).src = slotImages[randomFirst].source;
+	if (randomFirst > 0) {
+		topRow[1].appendChild(document.createElement("img")).src = slotImages[randomFirst - 1].source;
+	} else {
+		topRow[1].appendChild(document.createElement("img")).src = slotImages[9].source;
+	};
+	if (randomFirst < 9) {
+		bottomRow[1].appendChild(document.createElement("img")).src =slotImages[randomFirst +1].source;
+	} else {
+		bottomRow[1].appendChild(document.createElement("img")).src =slotImages[0].source;
+	};
+};
+function spin2() {
+	var randomFirst =Math.floor(Math.random()*10);
+	var link = document.createElement("img");
+	middleRow[2].appendChild(document.createElement("img")).src = slotImages[randomFirst].source;
+	if (randomFirst > 0) {
+		topRow[2].appendChild(document.createElement("img")).src = slotImages[randomFirst - 1].source;
+	} else {
+		topRow[2].appendChild(document.createElement("img")).src = slotImages[9].source;
+	};
+	if (randomFirst < 9) {
+		bottomRow[2].appendChild(document.createElement("img")).src =slotImages[randomFirst +1].source;
+	} else {
+		bottomRow[2].appendChild(document.createElement("img")).src =slotImages[0].source;
+	};
+};
+function spin3() {
+	var randomFirst =Math.floor(Math.random()*10);
+	var link = document.createElement("img");
+	middleRow[3].appendChild(document.createElement("img")).src = slotImages[randomFirst].source;
+	if (randomFirst > 0) {
+		topRow[3].appendChild(document.createElement("img")).src = slotImages[randomFirst - 1].source;
+	} else {
+		topRow[3].appendChild(document.createElement("img")).src = slotImages[9].source;
+	};
+	if (randomFirst < 9) {
+		bottomRow[3].appendChild(document.createElement("img")).src =slotImages[randomFirst +1].source;
+	} else {
+		bottomRow[3].appendChild(document.createElement("img")).src =slotImages[0].source;
+	};
+};
+function spin4() {
+	var randomFirst =Math.floor(Math.random()*10);
+	var link = document.createElement("img");
+	middleRow[4].appendChild(document.createElement("img")).src = slotImages[randomFirst].source;
+	if (randomFirst > 0) {
+		topRow[4].appendChild(document.createElement("img")).src = slotImages[randomFirst - 1].source;
+	} else {
+		topRow[4].appendChild(document.createElement("img")).src = slotImages[9].source;
+	};
+	if (randomFirst < 9) {
+		bottomRow[4].appendChild(document.createElement("img")).src =slotImages[randomFirst +1].source;
+	} else {
+		bottomRow[4].appendChild(document.createElement("img")).src =slotImages[0].source;
+	};
+};
 
 $('#button1').on('click', function(){
 	startingBet = 1;
@@ -101,16 +172,40 @@ function betWithZeros(number, length) {
 };
 betSize.textContent = betWithZeros(startingBet, 3);
 
-// move the handle on click
+function movingFalcon() {
+	$("#falcon").removeClass('hidden');
+	$("#falcon").animate({left: '800px'}, 5000, function(){
+		$(this).removeAttr('style')});
+	setTimeout(function(){
+		$("#falcon").addClass('hidden');
+		// $("#falcon").animate({right: '800px'});
+	}, 5000);
+};
 
+
+// move the handle on click
 $('#handle').on('click', function(){
-	// lever.style.transform = "rotate(45deg)";
 	$(this).addClass('clicked');
-	console.log($(this));
 	setTimeout(function(){
 		$('#handle').removeClass('clicked');
-		
 	}, 600);
-
+	$('.horz1').empty(); //clears the form so that new images may appear
+	$('.horz2').empty();
+	$('.horz3').empty();
+	if (startingBet <= startingCredits) {
+		startingCredits = startingCredits - startingBet; // removes bet values from total remaining
+		totalCredits.textContent = creditWithZeros(startingCredits, 6);
+		movingFalcon();
+		setTimeout(spin0, 1800);
+		setTimeout(spin1, 2300);
+		setTimeout(spin2, 3000);
+		setTimeout(spin3, 3600);
+		setTimeout(spin4, 4200);
+		// spin4();
+	} else {
+		alert("You Need more credits for that bet");
+	}	
 });
+
+
 
