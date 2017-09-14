@@ -50,129 +50,26 @@ var slotImages = [
 	}
 ];
 
-//  function drySpin(num){
-//  	var randomFirst = Math.floor(Math.random()*10);
-//  	$('.horz2').eq(num).append('<img />');
-// 	$('.horz2 img').attr("src", slotImages[randomFirst].source);
-// 	$('.horz2').eq(num).addClass(slotImages[randomFirst].name);
-// 	if (randomFirst > 0) {
-// 		$('.horz1').eq(num).append('<img />');
-// 		$('.horz1 img').attr("src", slotImages[randomFirst -1].source);
-// 		$('.horz1').eq(num).addClass(slotImages[randomFirst -1].name);
-// 	} else {
-// 		$('.horz1').eq(num).append('<img />');
-// 		$('.horz1 img').attr("src", slotImages[9].source);
-// 		$('.horz1').eq(num).addClass(slotImages[9].name);
-// 	};
-// 	if (randomFirst < 9) {
-// 		$('.horz3').eq(num).append('<img />');
-// 		$('.horz3 img').attr("src", slotImages[randomFirst + 1].source);
-// 		$('.horz3').eq(num).addClass(slotImages[randomFirst + 1].name);
-// 	} else {
-// 		$('.horz3').eq(num).append('<img />');
-// 		$('.horz3 img').attr("src", slotImages[0].source);
-// 		$('.horz3').eq(num).addClass(slotImages[0].name);
-// 	};
-//  };
-//  function doubleDry() {
-//  	for (var i = 0; i <5; i++) {
-// 		drySpin(i);
-// 	}
-// }
-//functions to declare the "spins" for each slot
-function spin0() {
+function drySpin(num) {
 	var randomFirst =Math.floor(Math.random()*10);
-	$('.horz2').eq(0).append('<img />');
-	$('.horz2 img').attr("src", slotImages[randomFirst].source);
-	$('.horz2').eq(0).addClass(slotImages[randomFirst].name);
+	middleRow[num].appendChild(document.createElement("img")).src = slotImages[randomFirst].source;
+	middleRow[num].childNodes.className = slotImages[randomFirst].name;
 	if (randomFirst > 0) {
-		$('.horz1').eq(0).append('<img />');
-		$('.horz1 img').attr("src", slotImages[randomFirst -1].source);
-		$('.horz1').eq(0).addClass(slotImages[randomFirst -1].name);
+		topRow[num].appendChild(document.createElement("img")).src = slotImages[randomFirst - 1].source;
+		topRow[num].childNodes.className = slotImages[randomFirst-1].name;
 	} else {
-		$('.horz1').eq(0).append('<img />');
-		$('.horz1 img').attr("src", slotImages[9].source);
-		$('.horz1').eq(0).addClass(slotImages[9].name);
+		topRow[num].appendChild(document.createElement("img")).src = slotImages[9].source;
+		topRow[num].childNodes.className = slotImages[9].name;
 	};
 	if (randomFirst < 9) {
-		$('.horz3').eq(0).append('<img />');
-		$('.horz3 img').attr("src", slotImages[randomFirst + 1].source);
-		$('.horz3').eq(0).addClass(slotImages[randomFirst + 1].name);
+		bottomRow[num].appendChild(document.createElement("img")).src =slotImages[randomFirst +1].source;
+		bottomRow[num].childNodes.className = slotImages[randomFirst + 1].name;
 	} else {
-		$('.horz3').eq(0).append('<img />');
-		$('.horz3 img').attr("src", slotImages[0].source);
-		$('.horz3').eq(0).addClass(slotImages[0].name);
+		bottomRow[num].appendChild(document.createElement("img")).src =slotImages[0].source;
+		bottomRow[num].childNodes.className = slotImages[0].name;
 	};
+};
 
-};
-function spin1() {
-	var randomFirst =Math.floor(Math.random()*10);
-	$('.horz2').eq(1).append('<img />');
-	$('.horz2 img').attr("src", slotImages[randomFirst].source);
-	$('.horz2').eq(1).addClass(slotImages[randomFirst].name);
-	if (randomFirst > 0) {
-		$('.horz1').eq(1).append('<img />');
-		$('.horz1 img').attr("src", slotImages[randomFirst -1].source);
-		$('.horz1').eq(1).addClass(slotImages[randomFirst -1].name);
-	} else {
-		$('.horz1').eq(1).append('<img />');
-		$('.horz1 img').attr("src", slotImages[9].source);
-		$('.horz1').eq(1).addClass(slotImages[9].name);
-	};
-	if (randomFirst < 9) {
-		$('.horz3').eq(1).append('<img />');
-		$('.horz3 img').attr("src", slotImages[randomFirst + 1].source);
-		$('.horz3').eq(1).addClass(slotImages[randomFirst + 1].name);
-	} else {
-		$('.horz3').eq(1).append('<img />');
-		$('.horz3 img').attr("src", slotImages[0].source);
-		$('.horz3').eq(1).addClass(slotImages[0].name);
-	};
-};
-function spin2() {
-	var randomFirst =Math.floor(Math.random()*10);
-	middleRow[2].appendChild(document.createElement("img")).src = slotImages[randomFirst].source;
-	// middleRow[2].childNode.className = slotImages[randomFirst].name;
-	// console.log(middleRow[2].childNode)
-	if (randomFirst > 0) {
-		topRow[2].appendChild(document.createElement("img")).src = slotImages[randomFirst - 1].source;
-	} else {
-		topRow[2].appendChild(document.createElement("img")).src = slotImages[9].source;
-	};
-	if (randomFirst < 9) {
-		bottomRow[2].appendChild(document.createElement("img")).src =slotImages[randomFirst +1].source;
-	} else {
-		bottomRow[2].appendChild(document.createElement("img")).src =slotImages[0].source;
-	};
-};
-function spin3() {
-	var randomFirst =Math.floor(Math.random()*10);
-	middleRow[3].appendChild(document.createElement("img")).src = slotImages[randomFirst].source;
-	if (randomFirst > 0) {
-		topRow[3].appendChild(document.createElement("img")).src = slotImages[randomFirst - 1].source;
-	} else {
-		topRow[3].appendChild(document.createElement("img")).src = slotImages[9].source;
-	};
-	if (randomFirst < 9) {
-		bottomRow[3].appendChild(document.createElement("img")).src =slotImages[randomFirst +1].source;
-	} else {
-		bottomRow[3].appendChild(document.createElement("img")).src =slotImages[0].source;
-	};
-};
-function spin4() {
-	var randomFirst =Math.floor(Math.random()*10);
-	middleRow[4].appendChild(document.createElement("img")).src = slotImages[randomFirst].source;
-	if (randomFirst > 0) {
-		topRow[4].appendChild(document.createElement("img")).src = slotImages[randomFirst - 1].source;
-	} else {
-		topRow[4].appendChild(document.createElement("img")).src = slotImages[9].source;
-	};
-	if (randomFirst < 9) {
-		bottomRow[4].appendChild(document.createElement("img")).src =slotImages[randomFirst +1].source;
-	} else {
-		bottomRow[4].appendChild(document.createElement("img")).src =slotImages[0].source;
-	};
-};
 
 //Event Listeners for each of the different betting options
 $('#button1').on('click', function(){
@@ -229,6 +126,32 @@ function movingFalcon() {
 };
 
 
+//check for winners on line 1
+function lineOneWinner () {
+	if (middleRow[0].childNodes.className === middleRow[1].childNodes.className) {
+		if(middleRow[0].childNodes.className === middleRow[2].childNodes.className || middleRow[0].childNodes.className === middleRow[3].childNodes.className || middleRow[0].childNodes.className === middleRow[4].childNodes.className) {
+			$('#display p').text("You Won!");
+			startingCredits = startingCredits + 1;
+			totalCredits.textContent = creditWithZeros(startingCredits, 6);
+		}
+		
+	} else if (middleRow[0].childNodes.className === middleRow[2].childNodes.className) {
+		if(middleRow[0].childNodes.className === middleRow[3].childNodes.className || middleRow[0].childNodes.className === middleRow[4].childNodes.className) {
+			$('#display p').text("You Won!");
+			startingCredits = startingCredits + 1;
+			totalCredits.textContent = creditWithZeros(startingCredits, 6);
+		}
+	} else if(middleRow[0].childNodes.className === middleRow[3].childNodes.className) {
+		$('#display p').text("You Won!");
+		startingCredits = startingCredits + 1;
+		totalCredits.textContent = creditWithZeros(startingCredits, 6);
+	}
+	else {
+		$('#display p').text("You've Lost, Try again.")
+	};
+};
+
+
 // move the handle on click
 $('#handle').on('click', function(){
 	$(this).addClass('clicked');
@@ -243,24 +166,12 @@ $('#handle').on('click', function(){
 		startingCredits = startingCredits - startingBet; // removes bet values from total remaining
 		totalCredits.textContent = creditWithZeros(startingCredits, 6);
 		movingFalcon();
-		setTimeout(spin0, 1900);
-		setTimeout(spin1, 2300);
-		setTimeout(spin2, 3000);
-		setTimeout(spin3, 3600);
-		setTimeout(spin4, 4200);
-
-		if ($("#button1").prop("checked", true)) {
-			if ($('.horz2').eq(0).hasClass("rey") && $('.horz2').eq(1).hasClass("rey")) {
-				startingCredits = startingCredits +1
-			} else {
-			}
-		};
-		console.log($('.horz2').eq(0));
-		console.log($('.horz2').eq(1));
-		console.log($('.horz2').eq(2));
-		console.log($('.horz2').eq(3));
-		console.log($('.horz2').eq(4));
-		
+		setTimeout(drySpin, 1900, 0);
+		setTimeout(drySpin, 2300, 1);
+		setTimeout(drySpin, 3000, 2);
+		setTimeout(drySpin, 3600, 3);
+		setTimeout(drySpin, 4200, 4);
+		setTimeout(lineOneWinner, 5000);
 	} else {
 		$('#display p').text("Enter More Credits");
 		$('#display p').addClass("needsCredits");
