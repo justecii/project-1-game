@@ -9,53 +9,68 @@
 
 </head>
 <body>
-	
 	<div id="container">
-		<div class="row" id="header">
+	<div class="row">
+		<div class="col-xs-12" id="header">
 			<h1>Star Wars: The Empire Slots Back</h1>
-				<table id="tracker">
-					<tbody>
-						<tr>
-							<td class="money" id="totalCredits"></td>
-							<td class="display" id="spaced">Credits</td>
-							<td class="money" id="activeBet"></td>
-							<td class="display">Bet</td>
-						</tr>
-					</tbody>
-				</table>
 		</div>
-		<div class="row">
-			<img id="falcon" class="hidden" src="images/Falcon.png">
-			<table class="col-xs-9" id="slotGame">
+	</div>
+	<div class="row">
+		<div class="col-xs-7" id="display">
+			<p>May the Force be with you</p>
+		</div>
+		<div class="col-xs-5" id="cashButtons">
+			<button id="inBtn">Add Credits</button>
+			<button id="outBtn">Cash out</button>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<table id="tracker">
 				<tbody>
 					<tr>
-						<td class="vert1 horz1 pay2 pay4"></td>
-						<td class="vert2 horz1 pay2"></td>
-						<td class="vert3 horz1 pay2 pay5"></td>
-						<td class="vert4 horz1 pay2"></td>
-						<td class="vert5 horz1 pay2 pay4"></td>
-					</tr>
-					<tr>
-						<td class="vert1 horz2 pay1"></td>
-						<td class="vert2 horz2 pay1 pay4 pay5"></td>
-						<td class="vert3 horz2 pay1"></td>
-						<td class="vert4 horz2 pay1 pay4 pay5"></td>
-						<td class="vert5 horz2 pay1"></td>
-					</tr>
-					<tr>
-						<td class="vert1 horz3 pay3 pay5"></td>
-						<td class="vert2 horz3 pay3"></td>
-						<td class="vert3 horz3 pay3 pay4"></td>
-						<td class="vert4 horz3 pay3"></td>
-						<td class="vert5 horz3 pay3 pay5"></td>
+						<td class="money" id="totalCredits"></td>
+						<td class="display" id="spaced">Credits</td>
+						<td class="money" id="activeBet"></td>
+						<td class="display">Bet</td>
 					</tr>
 				</tbody>
 			</table>
-			<!-- Lighsaber Pull-Lever -->
-			<div class="col-xs-3" id="handle"><img src="images/lightsaber.png"></div>
 		</div>
-		<!--Buttons to select different bets -->
-		<div class="row" id="betButtons">
+	</div>
+	<div class="row">
+		<img id="falcon" class="hidden" src="images/Falcon.png">
+		<table class="col-xs-9" id="slotGame">
+			<tbody>
+				<tr>
+					<td class="vert1 horz1 pay2 pay4"></td>
+					<td class="vert2 horz1 pay2"></td>
+					<td class="vert3 horz1 pay2 pay5"></td>
+					<td class="vert4 horz1 pay2"></td>
+					<td class="vert5 horz1 pay2 pay4"></td>
+				</tr>
+				<tr>
+					<td class="vert1 horz2 pay1"></td>
+					<td class="vert2 horz2 pay1 pay4 pay5"></td>
+					<td class="vert3 horz2 pay1"></td>
+					<td class="vert4 horz2 pay1 pay4 pay5"></td>
+					<td class="vert5 horz2 pay1"></td>
+				</tr>
+				<tr>
+					<td class="vert1 horz3 pay3 pay5"></td>
+					<td class="vert2 horz3 pay3"></td>
+					<td class="vert3 horz3 pay3 pay4"></td>
+					<td class="vert4 horz3 pay3"></td>
+					<td class="vert5 horz3 pay3 pay5"></td>
+				</tr>
+			</tbody>
+		</table>
+		<!-- Lighsaber Pull-Lever -->
+		<div class="col-xs-3" id="handle"><img src="images/lightsaber.png"></div>
+	</div>
+	<div class="row">
+		<div class="col-sm-1" class="empty"></div>
+		<div class="col-xs-12 col-sm-10" id="betButtons">
 			<input type="radio" name="button" class="buttonState" checked id="button1" value="1"/>
 				<label class="button" for="button1"><span class="bold">Bet 1</span><br>1 Line<br>1 Credit</label>
 			<input type="radio" name="button" class="buttonState" id="button3" value="3"/>
@@ -69,10 +84,9 @@
 			<input type="radio" name="button" class="buttonState" id="button100" value="100"/>
 			<label class="button" for="button100"><span class="bold">Bet 100</span><br>5 Lines<br>20 Credits</label>
 		</div>
+		<div class="col-sm-1" class="empty"></div>
 	</div>
-
-
-
+</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
 <!-- <script src="~/bower_components/jQuery-SlotMachine/dist/jquery.slotmachine.min.js"></script> -->

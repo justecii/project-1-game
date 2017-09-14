@@ -1,4 +1,4 @@
-var startingCredits = 100;
+var startingCredits = 10;
 var startingBet = 0;
 var totalCredits = document.getElementById("totalCredits");
 var betSize = document.getElementById("activeBet");
@@ -49,44 +49,91 @@ var slotImages = [
 		source:"images/vader.gif"
 	}
 ];
- 
 
+//  function drySpin(num){
+//  	var randomFirst = Math.floor(Math.random()*10);
+//  	$('.horz2').eq(num).append('<img />');
+// 	$('.horz2 img').attr("src", slotImages[randomFirst].source);
+// 	$('.horz2').eq(num).addClass(slotImages[randomFirst].name);
+// 	if (randomFirst > 0) {
+// 		$('.horz1').eq(num).append('<img />');
+// 		$('.horz1 img').attr("src", slotImages[randomFirst -1].source);
+// 		$('.horz1').eq(num).addClass(slotImages[randomFirst -1].name);
+// 	} else {
+// 		$('.horz1').eq(num).append('<img />');
+// 		$('.horz1 img').attr("src", slotImages[9].source);
+// 		$('.horz1').eq(num).addClass(slotImages[9].name);
+// 	};
+// 	if (randomFirst < 9) {
+// 		$('.horz3').eq(num).append('<img />');
+// 		$('.horz3 img').attr("src", slotImages[randomFirst + 1].source);
+// 		$('.horz3').eq(num).addClass(slotImages[randomFirst + 1].name);
+// 	} else {
+// 		$('.horz3').eq(num).append('<img />');
+// 		$('.horz3 img').attr("src", slotImages[0].source);
+// 		$('.horz3').eq(num).addClass(slotImages[0].name);
+// 	};
+//  };
+//  function doubleDry() {
+//  	for (var i = 0; i <5; i++) {
+// 		drySpin(i);
+// 	}
+// }
+//functions to declare the "spins" for each slot
 function spin0() {
 	var randomFirst =Math.floor(Math.random()*10);
-	var aboveFirst = randomFirst - 1;
-	var belowFirst = randomFirst +1;
-	var link = document.createElement("img");
-	middleRow[0].appendChild(document.createElement("img")).src = slotImages[randomFirst].source;
+	$('.horz2').eq(0).append('<img />');
+	$('.horz2 img').attr("src", slotImages[randomFirst].source);
+	$('.horz2').eq(0).addClass(slotImages[randomFirst].name);
 	if (randomFirst > 0) {
-		topRow[0].appendChild(document.createElement("img")).src = slotImages[randomFirst - 1].source;
+		$('.horz1').eq(0).append('<img />');
+		$('.horz1 img').attr("src", slotImages[randomFirst -1].source);
+		$('.horz1').eq(0).addClass(slotImages[randomFirst -1].name);
 	} else {
-		topRow[0].appendChild(document.createElement("img")).src = slotImages[9].source;
+		$('.horz1').eq(0).append('<img />');
+		$('.horz1 img').attr("src", slotImages[9].source);
+		$('.horz1').eq(0).addClass(slotImages[9].name);
 	};
 	if (randomFirst < 9) {
-		bottomRow[0].appendChild(document.createElement("img")).src =slotImages[randomFirst +1].source;
+		$('.horz3').eq(0).append('<img />');
+		$('.horz3 img').attr("src", slotImages[randomFirst + 1].source);
+		$('.horz3').eq(0).addClass(slotImages[randomFirst + 1].name);
 	} else {
-		bottomRow[0].appendChild(document.createElement("img")).src =slotImages[0].source;
+		$('.horz3').eq(0).append('<img />');
+		$('.horz3 img').attr("src", slotImages[0].source);
+		$('.horz3').eq(0).addClass(slotImages[0].name);
 	};
+
 };
 function spin1() {
 	var randomFirst =Math.floor(Math.random()*10);
-	var link = document.createElement("img");
-	middleRow[1].appendChild(document.createElement("img")).src = slotImages[randomFirst].source;
+	$('.horz2').eq(1).append('<img />');
+	$('.horz2 img').attr("src", slotImages[randomFirst].source);
+	$('.horz2').eq(1).addClass(slotImages[randomFirst].name);
 	if (randomFirst > 0) {
-		topRow[1].appendChild(document.createElement("img")).src = slotImages[randomFirst - 1].source;
+		$('.horz1').eq(1).append('<img />');
+		$('.horz1 img').attr("src", slotImages[randomFirst -1].source);
+		$('.horz1').eq(1).addClass(slotImages[randomFirst -1].name);
 	} else {
-		topRow[1].appendChild(document.createElement("img")).src = slotImages[9].source;
+		$('.horz1').eq(1).append('<img />');
+		$('.horz1 img').attr("src", slotImages[9].source);
+		$('.horz1').eq(1).addClass(slotImages[9].name);
 	};
 	if (randomFirst < 9) {
-		bottomRow[1].appendChild(document.createElement("img")).src =slotImages[randomFirst +1].source;
+		$('.horz3').eq(1).append('<img />');
+		$('.horz3 img').attr("src", slotImages[randomFirst + 1].source);
+		$('.horz3').eq(1).addClass(slotImages[randomFirst + 1].name);
 	} else {
-		bottomRow[1].appendChild(document.createElement("img")).src =slotImages[0].source;
+		$('.horz3').eq(1).append('<img />');
+		$('.horz3 img').attr("src", slotImages[0].source);
+		$('.horz3').eq(1).addClass(slotImages[0].name);
 	};
 };
 function spin2() {
 	var randomFirst =Math.floor(Math.random()*10);
-	var link = document.createElement("img");
 	middleRow[2].appendChild(document.createElement("img")).src = slotImages[randomFirst].source;
+	// middleRow[2].childNode.className = slotImages[randomFirst].name;
+	// console.log(middleRow[2].childNode)
 	if (randomFirst > 0) {
 		topRow[2].appendChild(document.createElement("img")).src = slotImages[randomFirst - 1].source;
 	} else {
@@ -100,7 +147,6 @@ function spin2() {
 };
 function spin3() {
 	var randomFirst =Math.floor(Math.random()*10);
-	var link = document.createElement("img");
 	middleRow[3].appendChild(document.createElement("img")).src = slotImages[randomFirst].source;
 	if (randomFirst > 0) {
 		topRow[3].appendChild(document.createElement("img")).src = slotImages[randomFirst - 1].source;
@@ -115,7 +161,6 @@ function spin3() {
 };
 function spin4() {
 	var randomFirst =Math.floor(Math.random()*10);
-	var link = document.createElement("img");
 	middleRow[4].appendChild(document.createElement("img")).src = slotImages[randomFirst].source;
 	if (randomFirst > 0) {
 		topRow[4].appendChild(document.createElement("img")).src = slotImages[randomFirst - 1].source;
@@ -129,6 +174,7 @@ function spin4() {
 	};
 };
 
+//Event Listeners for each of the different betting options
 $('#button1').on('click', function(){
 	startingBet = 1;
 	betSize.textContent = betWithZeros(startingBet, 3);
@@ -172,13 +218,13 @@ function betWithZeros(number, length) {
 };
 betSize.textContent = betWithZeros(startingBet, 3);
 
+//make the Falcon move across the page like its make a kessel run
 function movingFalcon() {
 	$("#falcon").removeClass('hidden');
 	$("#falcon").animate({left: '800px'}, 5000, function(){
 		$(this).removeAttr('style')});
 	setTimeout(function(){
 		$("#falcon").addClass('hidden');
-		// $("#falcon").animate({right: '800px'});
 	}, 5000);
 };
 
@@ -192,20 +238,39 @@ $('#handle').on('click', function(){
 	$('.horz1').empty(); //clears the form so that new images may appear
 	$('.horz2').empty();
 	$('.horz3').empty();
+	//make sure the user has enough credits to make the desired bet.
 	if (startingBet <= startingCredits) {
 		startingCredits = startingCredits - startingBet; // removes bet values from total remaining
 		totalCredits.textContent = creditWithZeros(startingCredits, 6);
 		movingFalcon();
-		setTimeout(spin0, 1800);
+		setTimeout(spin0, 1900);
 		setTimeout(spin1, 2300);
 		setTimeout(spin2, 3000);
 		setTimeout(spin3, 3600);
 		setTimeout(spin4, 4200);
-		// spin4();
+
+		if ($("#button1").prop("checked", true)) {
+			if ($('.horz2').eq(0).hasClass("rey") && $('.horz2').eq(1).hasClass("rey")) {
+				startingCredits = startingCredits +1
+			} else {
+			}
+		};
+		console.log($('.horz2').eq(0));
+		console.log($('.horz2').eq(1));
+		console.log($('.horz2').eq(2));
+		console.log($('.horz2').eq(3));
+		console.log($('.horz2').eq(4));
+		
 	} else {
-		alert("You Need more credits for that bet");
+		$('#display p').text("Enter More Credits");
+		$('#display p').addClass("needsCredits");
 	}	
 });
+
+//victory logic
+//only 1 line
+
+
 
 
 
