@@ -333,6 +333,7 @@ function doubleMiddle () {
 	}
 	else {
 		// $('#display p').text("You've Lost, Try again.")
+
 	};
 };
 function doubleTop () {
@@ -471,6 +472,90 @@ function doubleLine5 () {
 		//display
 	};
 };
+function line4Winner(){
+	if (bottomRow[0].childNodes.className === middleRow[1].childNodes.className) {
+		if(bottomRow[0].childNodes.className === topRow[2].childNodes.className || bottomRow[0].childNodes.className === middleRow[3].childNodes.className || bottomRow[0].childNodes.className === bottomRow[4].childNodes.className) {
+			$('#display p').text("You Won!");
+			startingCredits = startingCredits + 2;
+			totalCredits.textContent = creditWithZeros(startingCredits, 6);
+		} 
+	} else if(bottomRow[0].childNodes.className === topRow[2].childNodes.className) {
+		if (bottomRow[0].childNodes.className === middleRow[3].childNodes.className || bottomRow[0].childNodes.className === bottomRow[4].childNodes.className) {
+			$('#display p').text("You Won!");
+			startingCredits = startingCredits + 2;
+			totalCredits.textContent = creditWithZeros(startingCredits, 6);
+		};
+	} else if (bottomRow[0].childNodes.className === middleRow[3].childNodes.className && bottomRow[0].childNodes.className === bottomRow[4].childNodes.className) {
+		$('#display p').text("You Won!");
+		startingCredits = startingCredits + 2;
+		totalCredits.textContent = creditWithZeros(startingCredits, 6);
+	} else if (middleRow[1].childNodes.className === topRow[2].childNodes.className){
+		if (middleRow[1].childNodes.className === middleRow[3].childNodes.className || middleRow[1].childNodes.className === bottomRow[4].childNodes.className) {
+			$('#display p').text("You Won!");
+			startingCredits = startingCredits + 2;
+			totalCredits.textContent = creditWithZeros(startingCredits, 6);
+		}
+	} else if (middleRow[1].childNodes.className === middleRow[3].childNodes.className && middleRow[1].childNodes.className === bottomRow[4].childNodes.className) {
+		$('#display p').text("You Won!");
+		startingCredits = startingCredits + 2;
+		totalCredits.textContent = creditWithZeros(startingCredits, 6);
+	} else if (topRow[2].childNodes.className === middleRow[3].childNodes.className && topRow[2].childNodes.className === bottomRow[4].childNodes.className) {
+		$('#display p').text("You Won!");
+		startingCredits = startingCredits + 2;
+		totalCredits.textContent = creditWithZeros(startingCredits, 6);
+	} else {
+		//display
+	}
+};
+function line5Winner(){
+	if (topRow[0].childNodes.className === middleRow[1].childNodes.className) {
+		if(topRow[0].childNodes.className === bottomRow[2].childNodes.className || topRow[0].childNodes.className === middleRow[3].childNodes.className || topRow[0].childNodes.className === topRow[4].childNodes.className) {
+			$('#display p').text("You Won!");
+			startingCredits = startingCredits + 2;
+			totalCredits.textContent = creditWithZeros(startingCredits, 6);
+		} 
+	} else if(topRow[0].childNodes.className === bottomRow[2].childNodes.className) {
+		if (topRow[0].childNodes.className === middleRow[3].childNodes.className || topRow[0].childNodes.className === topRow[4].childNodes.className) {
+			$('#display p').text("You Won!");
+			startingCredits = startingCredits + 2;
+			totalCredits.textContent = creditWithZeros(startingCredits, 6);
+		};
+	} else if (topRow[0].childNodes.className === middleRow[3].childNodes.className && topRow[0].childNodes.className === topRow[4].childNodes.className) {
+		$('#display p').text("You Won!");
+		startingCredits = startingCredits + 2;
+		totalCredits.textContent = creditWithZeros(startingCredits, 6);
+	} else if (middleRow[1].childNodes.className === bottomRow[2].childNodes.className){
+		if (middleRow[1].childNodes.className === middleRow[3].childNodes.className || middleRow[1].childNodes.className === topmRow[4].childNodes.className) {
+			$('#display p').text("You Won!");
+			startingCredits = startingCredits + 2;
+			totalCredits.textContent = creditWithZeros(startingCredits, 6);
+		}
+	} else if (middleRow[1].childNodes.className === middleRow[3].childNodes.className && middleRow[1].childNodes.className === topRow[4].childNodes.className) {
+		$('#display p').text("You Won!");
+		startingCredits = startingCredits + 2;
+		totalCredits.textContent = creditWithZeros(startingCredits, 6);
+	} else if (bottomRow[2].childNodes.className === middleRow[3].childNodes.className && bottomRow[2].childNodes.className === topRow[4].childNodes.className) {
+		$('#display p').text("You Won!");
+		startingCredits = startingCredits + 2;
+		totalCredits.textContent = creditWithZeros(startingCredits, 6);
+	} else {
+		//display
+	}
+}
+//different functions for the different bets
+function tripleWinner () {
+	topWinner();
+	middleWinner();
+	bottomWinner();
+}
+
+function diagWinner () {
+	topWinner();
+	middleWinner();
+	bottomWinner();
+	line4Winner();
+	line5Winner();
+}
 
 function tripleWinner () {
 	setTimeout(topWinner, 1000);
@@ -501,10 +586,10 @@ function doubleDiag() {
 
 
 // move the handle on click
-$('#handle').on('click', function(){
+$('#saber').on('click', function(){
 	$(this).addClass('clicked');
 	setTimeout(function(){
-		$('#handle').removeClass('clicked');
+		$('#saber').removeClass('clicked');
 	}, 600);
 	$('.horz1').empty(); //clears the form so that new images may appear
 	$('.horz2').empty();
@@ -550,19 +635,20 @@ $('#handle').on('click', function(){
 });
 
 //add credits
-$('#inBtn').on('click', function(){
-	var addedCredits = prompt("Please add credits");
-	if (addedCredits > 0 && addedCredits < 100000) {
-		startingCredits = startingCredits + parseInt(addedCredits);
-		totalCredits.textContent = creditWithZeros(startingCredits, 6);
-	}
-});
+	$('#submitCredits').on('click', function(){
+		var addedCredits = $('#cashIn').val();
+			if (addedCredits > 0 && addedCredits < 100000) {
+			startingCredits = startingCredits + parseInt(addedCredits);
+			totalCredits.textContent = creditWithZeros(startingCredits, 6);
+			$("#addCredits").modal('hide');
+			} else {
+				$('.modal-body p').text("insert a valid amount of Credits or Depart")
+			}
+	});
 
 //cash out
-$('#outBtn').on('click', function(){
-	if (window.confirm("Are you sure you want to remove your credits")) {
+	$('#cashOut').click(function(){
 		startingCredits = 0;
 		totalCredits.textContent = creditWithZeros(startingCredits, 6);
-
-	};
-});
+		$('#outCredits').modal('hide')
+	});
