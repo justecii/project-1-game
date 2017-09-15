@@ -281,7 +281,7 @@ function line5Winner(){
 		startingCredits = startingCredits + 2;
 		totalCredits.textContent = creditWithZeros(startingCredits, 6);
 	} else if (middleRow[1].childNodes.className === bottomRow[2].childNodes.className){
-		if (middleRow[1].childNodes.className === middleRow[3].childNodes.className || middleRow[1].childNodes.className === topmRow[4].childNodes.className) {
+		if (middleRow[1].childNodes.className === middleRow[3].childNodes.className || middleRow[1].childNodes.className === topRow[4].childNodes.className) {
 			$('#display p').text("Winner - Line 5!");
 			startingCredits = startingCredits + 2;
 			totalCredits.textContent = creditWithZeros(startingCredits, 6);
