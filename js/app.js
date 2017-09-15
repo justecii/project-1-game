@@ -333,6 +333,7 @@ function doubleMiddle () {
 	}
 	else {
 		// $('#display p').text("You've Lost, Try again.")
+
 	};
 };
 function doubleTop () {
@@ -471,6 +472,90 @@ function doubleLine5 () {
 		//display
 	};
 };
+function line4Winner(){
+	if (bottomRow[0].childNodes.className === middleRow[1].childNodes.className) {
+		if(bottomRow[0].childNodes.className === topRow[2].childNodes.className || bottomRow[0].childNodes.className === middleRow[3].childNodes.className || bottomRow[0].childNodes.className === bottomRow[4].childNodes.className) {
+			$('#display p').text("You Won!");
+			startingCredits = startingCredits + 2;
+			totalCredits.textContent = creditWithZeros(startingCredits, 6);
+		} 
+	} else if(bottomRow[0].childNodes.className === topRow[2].childNodes.className) {
+		if (bottomRow[0].childNodes.className === middleRow[3].childNodes.className || bottomRow[0].childNodes.className === bottomRow[4].childNodes.className) {
+			$('#display p').text("You Won!");
+			startingCredits = startingCredits + 2;
+			totalCredits.textContent = creditWithZeros(startingCredits, 6);
+		};
+	} else if (bottomRow[0].childNodes.className === middleRow[3].childNodes.className && bottomRow[0].childNodes.className === bottomRow[4].childNodes.className) {
+		$('#display p').text("You Won!");
+		startingCredits = startingCredits + 2;
+		totalCredits.textContent = creditWithZeros(startingCredits, 6);
+	} else if (middleRow[1].childNodes.className === topRow[2].childNodes.className){
+		if (middleRow[1].childNodes.className === middleRow[3].childNodes.className || middleRow[1].childNodes.className === bottomRow[4].childNodes.className) {
+			$('#display p').text("You Won!");
+			startingCredits = startingCredits + 2;
+			totalCredits.textContent = creditWithZeros(startingCredits, 6);
+		}
+	} else if (middleRow[1].childNodes.className === middleRow[3].childNodes.className && middleRow[1].childNodes.className === bottomRow[4].childNodes.className) {
+		$('#display p').text("You Won!");
+		startingCredits = startingCredits + 2;
+		totalCredits.textContent = creditWithZeros(startingCredits, 6);
+	} else if (topRow[2].childNodes.className === middleRow[3].childNodes.className && topRow[2].childNodes.className === bottomRow[4].childNodes.className) {
+		$('#display p').text("You Won!");
+		startingCredits = startingCredits + 2;
+		totalCredits.textContent = creditWithZeros(startingCredits, 6);
+	} else {
+		//display
+	}
+};
+function line5Winner(){
+	if (topRow[0].childNodes.className === middleRow[1].childNodes.className) {
+		if(topRow[0].childNodes.className === bottomRow[2].childNodes.className || topRow[0].childNodes.className === middleRow[3].childNodes.className || topRow[0].childNodes.className === topRow[4].childNodes.className) {
+			$('#display p').text("You Won!");
+			startingCredits = startingCredits + 2;
+			totalCredits.textContent = creditWithZeros(startingCredits, 6);
+		} 
+	} else if(topRow[0].childNodes.className === bottomRow[2].childNodes.className) {
+		if (topRow[0].childNodes.className === middleRow[3].childNodes.className || topRow[0].childNodes.className === topRow[4].childNodes.className) {
+			$('#display p').text("You Won!");
+			startingCredits = startingCredits + 2;
+			totalCredits.textContent = creditWithZeros(startingCredits, 6);
+		};
+	} else if (topRow[0].childNodes.className === middleRow[3].childNodes.className && topRow[0].childNodes.className === topRow[4].childNodes.className) {
+		$('#display p').text("You Won!");
+		startingCredits = startingCredits + 2;
+		totalCredits.textContent = creditWithZeros(startingCredits, 6);
+	} else if (middleRow[1].childNodes.className === bottomRow[2].childNodes.className){
+		if (middleRow[1].childNodes.className === middleRow[3].childNodes.className || middleRow[1].childNodes.className === topmRow[4].childNodes.className) {
+			$('#display p').text("You Won!");
+			startingCredits = startingCredits + 2;
+			totalCredits.textContent = creditWithZeros(startingCredits, 6);
+		}
+	} else if (middleRow[1].childNodes.className === middleRow[3].childNodes.className && middleRow[1].childNodes.className === topRow[4].childNodes.className) {
+		$('#display p').text("You Won!");
+		startingCredits = startingCredits + 2;
+		totalCredits.textContent = creditWithZeros(startingCredits, 6);
+	} else if (bottomRow[2].childNodes.className === middleRow[3].childNodes.className && bottomRow[2].childNodes.className === topRow[4].childNodes.className) {
+		$('#display p').text("You Won!");
+		startingCredits = startingCredits + 2;
+		totalCredits.textContent = creditWithZeros(startingCredits, 6);
+	} else {
+		//display
+	}
+}
+
+function tripleWinner () {
+	topWinner();
+	middleWinner();
+	bottomWinner();
+}
+
+function diagWinner () {
+	topWinner();
+	middleWinner();
+	bottomWinner();
+	line4Winner();
+	line5Winner();
+}
 
 function tripleWinner () {
 	setTimeout(topWinner, 1000);
