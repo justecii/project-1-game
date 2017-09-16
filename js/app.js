@@ -9,6 +9,7 @@ var bottomRow = document.querySelectorAll('.horz3');
 var saberAudio = new Audio("audio/lightsaber.mp3");
 var cantinaAudio = new Audio("audio/cantina.mp3");
 var falconAudio = new Audio("audio/falcon.mp3");
+var exitAudio = new Audio("audio/lack_of_faith.wav");
 var slotImages = [
 	{
 		name: "kylo",
@@ -542,7 +543,7 @@ function line5Winner(){
 		//display
 	}
 }
-//different functions for the different bets
+//different functions for the
 function tripleWinner () {
 	topWinner();
 	middleWinner();
@@ -650,5 +651,6 @@ $('#saber').on('click', function(){
 	$('#cashOut').click(function(){
 		startingCredits = 0;
 		totalCredits.textContent = creditWithZeros(startingCredits, 6);
-		$('#outCredits').modal('hide')
+		$('#outCredits').modal('hide');
+		exitAudio.play();
 	});
