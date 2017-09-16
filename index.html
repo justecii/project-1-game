@@ -20,8 +20,50 @@
 			<p>May the Force be with you</p>
 		</div>
 		<div class="col-xs-5" id="cashButtons">
-			<button id="inBtn">Add Credits</button>
-			<button id="outBtn">Cash out</button>
+			<!-- modal butons -->
+			<button type="button" id="inBtn" class="btn btn-info btn-lg" data-toggle="modal" data-target="#submitCredits">Add Credits</button>
+			<button type="button" id="outBtn" class="btn btn-info btn-lg" data-toggle="modal" data-targer="#outCredits">Cash out</button>
+			<!-- Modal for adding credits-->
+			<div id="submitCredits" class="modal fade" role="dialog">
+			  <div class="modal-dialog">
+
+			    <!-- Modal content-->
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal">&times;</button>
+			        <h4 class="modal-title">Modal Header</h4>
+			      </div>
+			      <div class="modal-body">
+			        <p>Some text in the modal.</p>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			      </div>
+			    </div>
+
+			  </div>
+			</div>
+			<!-- Modal for cashout -->
+			<div id="outCredits" class="modal fade" role="dialog">
+			  <div class="modal-dialog">
+
+			    <!-- Modal content-->
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal">&times;</button>
+			        <h4 class="modal-title">Modal Header</h4>
+			      </div>
+			      <div class="modal-body">
+			        <p>Some text in the modal.</p>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			      </div>
+			    </div>
+
+			  </div>
+			</div>
+
 		</div>
 	</div>
 	<div class="row">
@@ -66,7 +108,7 @@
 			</tbody>
 		</table>
 		<!-- Lighsaber Pull-Lever -->
-		<div class="col-xs-3" id="handle"><img src="images/lightsaber.png"></div>
+		<div class="col-xs-3" id="handle"><img id="saber" src="images/lightsaber.png"></div>
 	</div>
 	<div class="row">
 		<div class="col-sm-1" class="empty"></div>
@@ -89,7 +131,7 @@
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
-<!-- <script src="~/bower_components/jQuery-SlotMachine/dist/jquery.slotmachine.min.js"></script> -->
+
 <script src="js/app.js" type="text/javascript"></script>
 </body>
 </html>
