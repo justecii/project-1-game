@@ -1,7 +1,6 @@
 html, body {
 	margin: 0;
 	padding: 0;
-	/*width: 1000px;*/
 	text-align: center;
 
 }
@@ -11,8 +10,6 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0 auto;
-    /*height: 100%;*/
-    /*width:100%;*/
 }
 #header h1 {
 	font-family: Star Jedi;
@@ -29,25 +26,29 @@ table {
 }
 #display {
 	padding: 0;
-	font-size: 2em;
+	font-size: 2.5em;
 	color: white;
 	font-family: Star Jedi;
+	text-align: right;
 }
 #cashButtons {
-	
+	font-size: 1.2em
 }
 #inBtn {
 	margin: 1% auto;
-	font-size: 1em;
+	animation: blink 1s linear infinite;
+	border: 3px solid white;
+	padding: 3%;
 }
 #outBtn {
 	margin: 1% auto;
-	font-size: 1em;
+	border: 3px solid white;
+	padding: 3%;
 }
 #falcon {
 	position: absolute;
 	left:-350px;
-	top:150px;
+	top:35%;
 	max-height: 250px;
 	z-index: 10;
 }
@@ -106,7 +107,7 @@ table {
 	max-height: 30px;
 	padding: 0;
 	margin: 0 auto;
-	font-size: 2em;
+	font-size: 2.5em;
 }
 #tracker .display {
 	color: red;
@@ -114,9 +115,24 @@ table {
 	font-family: Star Jedi;
 	font-size: 0.8em;
 }
+@keyframes flash {
+	
+  0%, 49% {
+    background-color: rgba(255,255,255,0.3);
+    /*border: 3px solid rgba(255,255,255,0.3);*/
+  }
+  50%, 100% {
+    background-color: rgba(135,206,250, 0.5);
+    /*border: 3px solid #e50000;*/
+  }
+}
 #slotGame {
-	margin: 1% auto;
-	background-color: rgba(255,255,255,0.3);
+	margin: 2% auto;
+	-webkit-animation: flash 4s infinite;  /* Safari 4+ */
+    -moz-animation: flash 4s infinite;  /* Fx 5+ */
+    -o-animation: flash 4s infinite;  /* Opera 12+ */
+    animation: flash 4s infinite;  /* IE 10+, Fx 29+ */
+	/*background-color: rgba(255,255,255,0.3);*/
 	
 }
 #betButtons {
@@ -168,7 +184,6 @@ table {
 .btn-lg {
 	background-color: yellow;
 	font-family: 'Roboto Mono', monospace;
-
 }
 .modal {
 	font-family: Star Jedi;
