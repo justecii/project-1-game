@@ -16,7 +16,7 @@ body {
 }
 #header h1 {
 	font-family: Star Jedi;
-	font-size: 3em;
+	font-size: 3.1em;
 	color: black;
     text-shadow:
     -1px -1px 0 yellow,
@@ -172,8 +172,17 @@ table {
 }
 .modal {
 	font-family: Star Jedi;
+	font-size: 1.5em;
 	background-color: rgba(255,255,255,0.7);
 }
 .modal-content {
 	margin-top:40%;
+	background-color: black;
+}
+.modal-header {
+	background-color: black;
+	color: white;
+}
+.modal-footer {
+	
 }

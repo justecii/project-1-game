@@ -53,7 +53,7 @@ var slotImages = [
 		source:"images/vader.gif"
 	}
 ];
-cantinaAudio.play();
+// cantinaAudio.play();
 function drySpin(num) {
 	var randomFirst = Math.floor(Math.random()*10);
 	var randomSecond = Math.floor(Math.random()*10);
@@ -608,23 +608,17 @@ $('#saber').on('click', function(){
 		setTimeout(drySpin, 3600, 3);
 		setTimeout(drySpin, 4200, 4);
 		if ($('#button1').prop("checked")) {
-			setTimeout(middleWinner, 5000)
-			console.log("button 1 checked")
+			setTimeout(middleWinner, 5000);
 		} else if ($('#button3').prop("checked")) {
 			setTimeout(tripleWinner, 5000);
-			console.log("button 3 checked")
 		} else if ($('#button5').prop("checked")) {
 			setTimeout(diagWinner, 5000);
-			console.log("button 5 checked")
 		} else if($('#button20').prop("checked")) {
 			setTimeout(doubleMiddle, 5000);
-			console.log("button 20 checked")
 		} else if($('#button60').prop("checked")) {
 			setTimeout(doubleTriple, 5000);
-			console.log("Button 60 checked")
 		} else if($('#button100').prop("checked")) {
 			setTimeout(doubleDiag, 5000);
-			console.log("button 100 checked")
 		} else {
 			$('#display p').text("Place your Bets")
 		}
@@ -639,9 +633,12 @@ $('#saber').on('click', function(){
 	$('#submitCredits').on('click', function(){
 		var addedCredits = $('#cashIn').val();
 			if (addedCredits > 0 && addedCredits < 100000) {
-			startingCredits = startingCredits + parseInt(addedCredits);
-			totalCredits.textContent = creditWithZeros(startingCredits, 6);
-			$("#addCredits").modal('hide');
+				cantinaAudio.play();
+				startingCredits = startingCredits + parseInt(addedCredits);
+				totalCredits.textContent = creditWithZeros(startingCredits, 6);
+				$("#addCredits").modal('hide');
+				$('#display p').text("Pull the saber");
+				$('#display p').removeClass("needsCredits");
 			} else {
 				$('.modal-body p').text("insert a valid amount of Credits or Depart")
 			}
@@ -652,5 +649,6 @@ $('#saber').on('click', function(){
 		startingCredits = 0;
 		totalCredits.textContent = creditWithZeros(startingCredits, 6);
 		$('#outCredits').modal('hide');
+		cantinaAudio.pause();
 		exitAudio.play();
 	});
