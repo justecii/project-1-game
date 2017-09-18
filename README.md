@@ -55,8 +55,14 @@ function drySpin(num) {
     bottomRow[num].childNodes.className = slotImages[randomThird].name;
 };
 ```
-Once i got the images to appear, I went back to trying different stylings to get them to appear. I poured over dozens of examples and spent hours trying to have a traditional slot animation. After all this time, I concluded that there was no solution that involved a language I am currently comfortable with and I would spin too much time on this project trying to learn a new language just for an animation. The problem was i couldn't find something that would rotate along the z-axis while also fitting into place 3 images in 3 different table rows. I decided to get creative in different ways and use animations to make my spins more attractive and desirable.
+Once i got the images to appear, I went back to trying different stylings to get them to appear. I poured over dozens of examples and spent hours trying to have a traditional slot animation. After all this time, I concluded that there was no solution that involved a language I am currently comfortable with and I would spin too much time on this project trying to learn a new language just for an animation. The problem was i couldn't find something that would rotate along the z-axis while also fitting into place 3 images in 3 different table rows. I decided to get creative in different ways and use animations to make my spins more attractive and desirable. I decided to use an animation of the Milenium Falcon "flying" across my screen and the slots displaying as it passed by them.
 
+Once I was satisfied with my slot animations, i moved to working on the logic for determining game wins. I decided to compare if the elements on a particular line were the same by comparing their classes since they were all given a class coresponding to the image in the array. Since I had already determined that I was going to allow for a win if only three elements on a payline were the same, I needed to use a lot of if statements, with nested if's to compare different possible wins: I drew out the paylines and then figured out all of the different potential victories i might have for each payline. Once that was all completed. I created a few more functions to contain my different win functions and tied them to which bet had been chosen by the user. This also required me to make sure the user's bet wasn't larger than the amount of credits they had available to them.
+![alt text](images/IMG_20170917_230239.jpg)
+
+### Additional Styling & Edits
+Once i backbone and guts of my game, i figured it was time to make the shell a little prettier. I drew a second wireframe, incorporating a display board, as well as buttons to add and remove credits, much the way you would at a casino. I used bootstrap to arrange my elements because I figured it would do a good job of arrange my elements in a manner that was organized.
+![alt text](images/IMG_20170917_230254.jpg)
 
 
 ### Resources and Contributors:
