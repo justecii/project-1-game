@@ -21,6 +21,12 @@ For my bets, i decided to give the user three options of paylines and the chance
     1. Bet 60 - same as Bet 3 but with 20x greater reward
     1. Bet 100 - same as Bet 5 but with 20x greater reward
 
+1. Item 1
+1. Item 2
+1. Item 3
+1. Item 3a
+1. Item 3b
+
 
 Initial Wireframe:
 Although I am a terrible artist, I decided to wireframe out my page before I went to work on actually coding the board
