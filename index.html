@@ -20,8 +20,53 @@
 			<p>May the Force be with you</p>
 		</div>
 		<div class="col-xs-5" id="cashButtons">
-			<button id="inBtn">Add Credits</button>
-			<button id="outBtn">Cash out</button>
+			<!-- modal butons -->
+			<button type="button" id="inBtn" class="btn btn-lg" data-toggle="modal" data-target="#addCredits">Add Credits</button>
+			<button type="button" id="outBtn" class="btn btn-lg" data-toggle="modal" data-target="#outCredits">Cash out</button>
+			<!-- Modal for adding credits-->
+			<div id="addCredits" class="modal fade" role="dialog">
+			  <div class="modal-dialog">
+
+			    <!-- Modal content-->
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal">&times;</button>
+			        <h4 class="modal-title">match three on a payline to win big</h4>
+			      </div>
+			      <div class="modal-body">
+			        <p>insert credits and save the galaxy</p>
+			        <input type="text" name="creditsInput" id="cashIn">
+			      </div>
+			      <div class="modal-footer">
+			      	<button type="button" class="btn btn-default"  id="submitCredits">input credits</button>
+			        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			      </div>
+			    </div>
+
+			  </div>
+			</div>
+			<!-- Modal for cashout -->
+			<div id="outCredits" class="modal fade" role="dialog">
+			  <div class="modal-dialog">
+
+			    <!-- Modal content-->
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal">&times;</button>
+			        <h4 class="modal-title">Cash out</h4>
+			      </div>
+			      <div class="modal-body">
+			        <p>are you sure you want to depart?</p>
+			      </div>
+			      <div class="modal-footer">
+			      	<button type="button" class="btn btn-default" data-dismiss="modal" id="cashOut">Remove Credits</button>
+			        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			      </div>
+			    </div>
+
+			  </div>
+			</div>
+
 		</div>
 	</div>
 	<div class="row">
@@ -40,6 +85,7 @@
 	</div>
 	<div class="row">
 		<img id="falcon" class="hidden" src="images/Falcon.png">
+
 		<table class="col-xs-9" id="slotGame">
 			<tbody>
 				<tr>
@@ -66,7 +112,7 @@
 			</tbody>
 		</table>
 		<!-- Lighsaber Pull-Lever -->
-		<div class="col-xs-3" id="handle"><img src="images/lightsaber.png"></div>
+		<div class="col-xs-3" id="handle"><img id="saber" src="images/lightsaber.png"></div>
 	</div>
 	<div class="row">
 		<div class="col-sm-1" class="empty"></div>
@@ -89,7 +135,7 @@
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
-<!-- <script src="~/bower_components/jQuery-SlotMachine/dist/jquery.slotmachine.min.js"></script> -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script src="js/app.js" type="text/javascript"></script>
 </body>
 </html>
