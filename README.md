@@ -55,10 +55,9 @@ function drySpin(num) {
     bottomRow[num].childNodes.className = slotImages[randomThird].name;
 };
 ```
+Once i got the images to appear, I went back to trying different stylings to get them to appear. I poured over dozens of examples and spent hours trying to have a traditional slot animation. After all this time, I concluded that there was no solution that involved a language I am currently comfortable with and I would spin too much time on this project trying to learn a new language just for an animation. The problem was i couldn't find something that would rotate along the z-axis while also fitting into place 3 images in 3 different table rows. I decided to get creative in different ways and use animations to make my spins more attractive and desirable.
 
 
 
-
-
-Resources and Contributor:
+### Resources and Contributors:
 * http://www.vegasslotsonline.com/features/paylines/ - figured out which paylines i wanted to use.
