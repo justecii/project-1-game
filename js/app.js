@@ -503,6 +503,7 @@ function doubleLine5 () {
 		totalCredits.textContent = creditWithZeros(startingCredits, 6);
 	};
 };
+
 //call functions equal to what bet is placed
 function tripleWinner () {
 	topWinner();
