@@ -42,18 +42,19 @@ I broke down my game into 3 important functions i needed to accomplish for my ga
 
 I decided quickly that I wanted the lever to animate and move and then return to it's intial position shortly after. At the beginning of my on-click function, i gave the lightsaber a class style that involved a 45degree rotation and after a short amount of time, removed that class so that the image would return to its "unpulled" position. 
 After i got the click animation, i figured i should give it something to do, so I went to work on putting the images on the gameboard. I first wanted to make the images spin in an array in a similar animation to what you see in traditional slot machines, but ran into too many challenges(more on this later). I decided I would first get the images to appear and then work on styling later. I started by using Math.random and used that random number compiled to chose an image in my array and put that image in my table of elements. I started with vanilla javascript to achieve this, then moved to jquery when i thought it might help me keep my code dry and help in my logic for determining game wins. After trial and error however, i figured out that jquery was making all of my variables that were equal to Math.random equal the same number as it ran through a loop and not give each variable a new value for Math.random. I was able to make my spins rather dry after a little bit of trial and error. Here is the code i used for each column:
-    function drySpin(num) {
-        var randomFirst = Math.floor(Math.random()*10);
-        var randomSecond = Math.floor(Math.random()*10);
-        var randomThird = Math.floor(Math.random()*10);
-        middleRow[num].appendChild(document.createElement("img")).src = slotImages[randomFirst].source;
-        middleRow[num].childNodes.className = slotImages[randomFirst].name;
-        topRow[num].appendChild(document.createElement("img")).src = slotImages[randomSecond].source;
-        topRow[num].childNodes.className = slotImages[randomSecond].name;
-        bottomRow[num].appendChild(document.createElement("img")).src =slotImages[randomThird].source;
-        bottomRow[num].childNodes.className = slotImages[randomThird].name;
-    };
-
+```
+function drySpin(num) {
+    var randomFirst = Math.floor(Math.random()*10);
+    var randomSecond = Math.floor(Math.random()*10);
+    var randomThird = Math.floor(Math.random()*10);
+    middleRow[num].appendChild(document.createElement("img")).src = slotImages[randomFirst].source;
+    middleRow[num].childNodes.className = slotImages[randomFirst].name;
+    topRow[num].appendChild(document.createElement("img")).src = slotImages[randomSecond].source;
+    topRow[num].childNodes.className = slotImages[randomSecond].name;
+    bottomRow[num].appendChild(document.createElement("img")).src =slotImages[randomThird].source;
+    bottomRow[num].childNodes.className = slotImages[randomThird].name;
+};
+```
 
 
 
