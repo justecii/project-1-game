@@ -21,15 +21,11 @@ body {
     -1px 1px 0 yellow,
     1px 1px 0 yellow;  
 }
-table {
-
-}
 #display {
 	padding: 0;
 	font-size: 2.5em;
 	color: white;
 	font-family: Star Jedi;
-	text-align: right;
 }
 #cashButtons {
 	font-size: 1.2em
@@ -65,12 +61,12 @@ table {
 }
 .money {
 	font-family: 'Roboto Mono', monospace;
-	background-color: black;
+	background-color: rgba(255,255,255,0.2);
 	color: white;
 	border-radius: 10px;
 	margin-left: 100px;	
+	letter-spacing: 6px;
 }
-
 .vert1 {
 	border-right: 5px solid yellow;
 }
@@ -118,22 +114,18 @@ table {
 @keyframes flash {
 	
   0%, 49% {
-    background-color: rgba(255,255,255,0.3);
-    /*border: 3px solid rgba(255,255,255,0.3);*/
+    background-color: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
   }
   50%, 100% {
-    background-color: rgba(135,206,250, 0.5);
-    /*border: 3px solid #e50000;*/
+    background-color: rgba(255,255,255, 0.3);
   }
 }
 #slotGame {
 	margin: 2% auto;
-	-webkit-animation: flash 4s infinite;  /* Safari 4+ */
-    -moz-animation: flash 4s infinite;  /* Fx 5+ */
-    -o-animation: flash 4s infinite;  /* Opera 12+ */
+	-webkit-animation: flash 4s infinite;   /*Safari 4+ */
+    -moz-animation: flash 4s infinite;   /*Fx 5+ */
+    -o-animation: flash 4s infinite;  /* Opera 12+  */
     animation: flash 4s infinite;  /* IE 10+, Fx 29+ */
-	/*background-color: rgba(255,255,255,0.3);*/
-	
 }
 #betButtons {
 	display: inline-block;
@@ -180,9 +172,10 @@ table {
 	transition: transform 0.5s ease;
 	transform: rotate(50deg);
 }
-
+/* modal stylings */
 .btn-lg {
 	background-color: yellow;
+	opacity: 0.8;
 	font-family: 'Roboto Mono', monospace;
 }
 .modal {
